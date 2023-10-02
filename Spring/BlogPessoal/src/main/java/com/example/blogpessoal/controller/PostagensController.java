@@ -54,6 +54,15 @@ public class PostagensController {
                 .body(postagensRepository.save(postagens));
     }
 
+
+    @PutMapping
+    public ResponseEntity<Postagens> put(@Valid @RequestBody Postagens postagens) {
+        return postagensRepository.findById(postagens.getId())
+                .map(resposta -> ResponseEntity.status(HttpStatus.OK)
+                .body(postagensRepository.save(postagens)))
+        .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+    }
+
     //método de deleção
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
