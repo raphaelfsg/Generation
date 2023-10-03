@@ -1,5 +1,6 @@
 package com.example.blogpessoal.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -39,6 +40,9 @@ public class Postagens {
     @UpdateTimestamp
     private LocalDateTime data;
 
+    @ManyToOne
+    @JsonIgnoreProperties("postagens")
+    private Tema tema;
 
 
     public Long getId() {
@@ -71,5 +75,13 @@ public class Postagens {
 
     public void setData(LocalDateTime data) {
         this.data = data;
+    }
+
+    public Tema getTema() {
+        return tema;
+    }
+
+    public void setTema(Tema tema) {
+        this.tema = tema;
     }
 }
