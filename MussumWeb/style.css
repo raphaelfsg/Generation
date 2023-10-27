@@ -1,0 +1,36 @@
+section {
+    font-size: 1.5rem;
+    margin-inline: auto;
+    width: min(60ch, 100%);
+}
+:root {
+    --text-color: #fff;
+    --bg-color: #000;
+    --logo-color: #00ff90;
+  }
+/* Linha horizontal */
+#linha {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-color: #000;
+        --bg-color: #fff;
+        --logo-color: #000;
+    }
+    #linha {
+        width: 100%;
+        border-bottom: 1px solid #000;
+    }
+}
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
