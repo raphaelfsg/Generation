@@ -1,35 +1,176 @@
 section {
     font-size: 1.5rem;
     margin-inline: auto;
-    width: min(60ch, 100%);
+    width: min(80ch, 100%);
 }
+
 :root {
     --text-color: #fff;
     --bg-color: #000;
-    --logo-color: #00ff90;
-  }
-/* Linha horizontal */
-#linha {
-    width: 100%;
-    border-bottom: 1px solid #fff;
 }
+
+
 @media (prefers-color-scheme: light) {
     :root {
         --text-color: #000;
         --bg-color: #fff;
-        --logo-color: #000;
-    }
-    #linha {
-        width: 100%;
-        border-bottom: 1px solid #000;
     }
 }
+
+/* Linha horizontal */
+#linha {
+    width: 100%;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.titulo {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--text-color);
+    padding: 0px 0px 20px 0px;
+
+}
+
+.trailer {
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 20em;
+}
+
+header {
+    grid-area: header;
+    background-color: var(--bg-color);
+}
+
+footer {
+    grid-area: footer;
+    background-color: var(--bg-color);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+.nav-links {
+    justify-content: left;
+}
+
+.nav-links a {
+    color: var(--text-color);
+}
+
+.menu {
+    display: flex;
+    gap: 2em;
+    font-size: 2em;
+    padding: 0 10em 0 0;
+}
+
+.menu li:hover {
+    background-color: darkgray;
+    border-radius: 1em;
+    transition: 0.3s ease;
+}
+
+.menu li {
+    padding: 0 .5em;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2em;
+    user-select: none;
+}
+
+@media  (max-width: 800px) {
+    .menu {
+        display: none;
+        position: absolute;
+        border-radius: 1em;
+        background-color: darkgray;
+        right: 3em;
+        left: 3.2em;
+        text-align: center;
+        padding: .3em 0 .3em 0;
+    }
+    .menu li:hover {
+        display: inline-block;
+        background-color: var(--bg-color);
+        transition: 0.3s ease;
+    }
+    .menu li + li {
+        margin-top: .2em;
+    }
+    input[type=checkbox]:checked ~ .menu {
+        display: block;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+p {
+    margin: .5em 0 1em 0;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+li {
+    list-style: none;
+}
+
 body {
     color: var(--text-color);
     background-color: var(--bg-color);
     display: flexbox;
     align-items: center;
     justify-content: center;
+}
+
+.logo {
+    width: 7rem;
+}
+
+.logotipo {
+    width: 7rem;
+    float: left;
+}
+
+.alinhamento {
+    text-align: center;
+    font-size: larger;
+}
+
+
+.imagem1 {
+    width: 50%;
+    float: left;
+    padding: 0em .5em 0 0;
+}
+
+.imagem2 {
+    width: 25%;
+    float: right;
+    padding: .5em 0em 0 .5em;
+}
+
+.imagem3 {
+    width: 10%;
+    float: left;
+    padding: 0em .3em 0em 0em;
 }
 
 
